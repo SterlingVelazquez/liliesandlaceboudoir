@@ -6,6 +6,7 @@ var pos = { left: 0, x: 0, initialX: 0 },
     images = ["/gallery/lal1.jpeg", "/gallery/lal2.jpeg", "/gallery/lal4.jpeg", "/gallery/lal3.jpeg", "/gallery/lal5.jpeg", 
     "/gallery/lal6.jpeg", "/gallery/lal7.jpeg", "/gallery/lal8.jpeg", "/gallery/lal9.jpeg", "/gallery/lal10.jpeg"],
     imageIndex = 0;
+const emailTest = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 
 class Home extends React.Component {
 
@@ -15,6 +16,7 @@ class Home extends React.Component {
       name : '',
       email: '',
       message: '',
+      textareaActive: false
     }
   }
 
@@ -22,10 +24,10 @@ class Home extends React.Component {
     document.getElementById("wrapper").scrollTo({
       top:10000,
     })
-    /*document.getElementById("wrapper").scrollTo({
+    document.getElementById("wrapper").scrollTo({
       top:0,
       behavior:"smooth"
-    })*/
+    })
   }
 
   mouseDownHandler(e) {
@@ -63,9 +65,12 @@ class Home extends React.Component {
   openImage(num) {
     if (pos.initialX === document.getElementById("gallerycontainer").scrollLeft) {
       imageIndex = num;
-      document.getElementById("fullscreenimage").src = images[num];
       document.getElementById("fullscreen").classList.toggle("active");
       document.getElementById("fullscreenshadow").classList.toggle("active");
+      if (("fullscreenimage" + num) !== document.getElementsByClassName("fullScreenImage active")[0].id) {
+        document.getElementsByClassName("fullScreenImage active")[0].classList.toggle("active");
+        document.getElementById("fullscreenimage" + num).classList.toggle("active");
+      }
     }
   }
 
@@ -76,7 +81,8 @@ class Home extends React.Component {
       imageIndex = images.length - 1;
     else if (imageIndex > images.length - 1)
       imageIndex = 0;
-    document.getElementById("fullscreenimage").src = images[imageIndex];
+    document.getElementsByClassName("fullScreenImage active")[0].classList.toggle("active");
+    document.getElementById("fullscreenimage" + imageIndex).classList.toggle("active");
   }
 
   closeImage() { 
@@ -85,24 +91,126 @@ class Home extends React.Component {
   }
 
   scrollToDiv(div) {
-    if (div === "gallery") {
-      document.getElementById("wrapper").scrollTo({
-        top:960,
-        behavior:"smooth"
-      })
-    } else if (div === "about") {
-      document.getElementById("wrapper").scrollTo({
-        top:2325,
-        behavior:"smooth"
-      })
-    } else {
-      document.getElementById("wrapper").scrollTo({
-        top:5800,
-        behavior:"smooth"
-      })
+    var width = window.innerWidth;
+    if (width > 1390) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:960,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:2325,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5800,
+          behavior:"smooth"
+        })
+      } 
+    } else if (width > 1112) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:960,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:2160,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5800,
+          behavior:"smooth"
+        })
+      } 
+    } else if (width > 868) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:950,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:2100,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5800,
+          behavior:"smooth"
+        })
+      } 
+    } else if (width > 690) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:940,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:1730,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5800,
+          behavior:"smooth"
+        })
+      }
+    } else if (width > 0) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:720,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:1465,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:4000,
+          behavior:"smooth"
+        })
+      }
     }
   }
 
+  setActive(e, input) {
+    e.stopPropagation();
+    if (input === "name" && !(document.getElementById("inputbox1").className.includes("active"))) {
+      console.log("hello")
+      if (document.getElementById("inputbox2").className.includes("active")) {
+        document.getElementById("inputbox2").classList.toggle("active");
+      } else if (document.getElementById("inputbox3").className.includes("active")) {
+        this.setState({textareaActive: false})
+        document.getElementById("inputbox1").classList.toggle("hide");
+        document.getElementById("inputbox2").classList.toggle("hide");
+      }
+      document.getElementById("inputbox1").classList.toggle("active");
+    } else if (input === "email" && !(document.getElementById("inputbox2").className.includes("active"))) {
+      if (document.getElementById("inputbox1").className.includes("active")) {
+        document.getElementById("inputbox1").classList.toggle("active");
+      } else if (document.getElementById("inputbox3").className.includes("active")) {
+        this.setState({textareaActive: false})
+        document.getElementById("inputbox1").classList.toggle("hide");
+        document.getElementById("inputbox2").classList.toggle("hide");
+      }
+      document.getElementById("inputbox2").classList.toggle("active");
+    } else if (input === "message" && !(document.getElementById("inputbox3").className.includes("active"))) {
+      if (document.getElementById("inputbox1").className.includes("active"))
+        document.getElementById("inputbox1").classList.toggle("active");
+      else if (document.getElementById("inputbox2").className.includes("active"))
+        document.getElementById("inputbox2").classList.toggle("active");
+      document.getElementById("inputbox1").classList.toggle("hide");
+      document.getElementById("inputbox2").classList.toggle("hide");
+      this.setState({textareaActive: true})
+    }
+  }
   setName(e) {
     var name = e.target.value;
     this.setState({name: name});
@@ -117,7 +225,8 @@ class Home extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    Email.send({
+    console.log(emailTest.test(this.state.email.toLowerCase()));
+    /*Email.send({
       Host : "smtp.elasticemail.com",
       Username : "sterlin.velazquez37@gmail.com",
       Password : "F858F773A3DC6E81629BC9DA194AB27B3802",
@@ -127,20 +236,49 @@ class Home extends React.Component {
       Body : this.state.message,
     }).then(
       message => alert(message)
-    );
+    );*/
+  }
+  resetInputs() {
+    document.activeElement.blur();
+    if (document.getElementById("inputbox1").className.includes("active")) {
+      document.getElementById("inputbox1").classList.toggle("active");
+    } else if (document.getElementById("inputbox2").className.includes("active")) {
+      document.getElementById("inputbox2").classList.toggle("active");
+    } else if (document.getElementById("inputbox3").className.includes("active")) {
+      this.setState({textareaActive: false})
+      document.getElementById("inputbox1").classList.toggle("hide");
+      document.getElementById("inputbox2").classList.toggle("hide");
+      document.getElementById("inputbox3").classList.toggle("active");
+    }
   }
 
   render () {
     return (
-      <container id="container">
+      <div id="container">
         <Head>
           <title>Lilies and Lace Boudoir</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
           <link rel="icon" href="/favicon.ico" />
           <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"/>
           <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"/>
         </Head>
 
-        <main className="wrapper" id="wrapper">
+        <div className="intro">
+          <div className="introContainer">
+            <p className="introText">
+              <span className="letter">W</span>
+              <span className="letter">e</span>
+              <span className="letter">l</span>
+              <span className="letter">c</span>
+              <span className="letter">o</span>
+              <span className="letter">m</span>
+              <span className="letter">e</span>
+            </p>
+            <img className="introImage" src="flower.png"></img>
+          </div>
+        </div>
+
+        <main className="wrapper" id="wrapper" onMouseDown={e => this.resetInputs()}>
 
           <section className="titleSection">
             <div className="extendTitleImage"></div>
@@ -184,18 +322,22 @@ class Home extends React.Component {
           <div className="divSplit"></div>
 
           <section className="aboutSection">
-            <img className="aboutBackground" src="/gallery/lal6.jpeg"></img>
+            <img className="aboutBackground" src="/gallery/lal1.jpeg"></img>
             <div className="aboutHeaderContainer">
             <div className="aboutHeaderSide"></div>
               <p className="aboutHeader">About</p>
               <div className="aboutHeaderSide"></div>
             </div>
             <div className="aboutContainer">
-              <div className="sideAbout">
-                <p className="aboutSideTextCopy">Hello,<br/>I'm Lily.</p>
-                <p className="aboutSideText">Hello,<br/>I'm Lily.</p>
+              <div className="mobileAboutContainer">
+                <div className="sideAbout">
+                  <p className="aboutSideTextCopy">Hello,<br/>I'm Lily.</p>
+                  <p className="aboutSideText">Hello,<br/>I'm Lily.</p>
+                  <p className="aboutSideTextCopyMobile">Hello, I'm Lily.</p>
+                  <p className="aboutSideTextMobile">Hello, I'm Lily.</p>
+                </div>
+                <img className="aboutImage" src="/gallery/about.jpeg"></img>
               </div>
-              <img className="aboutImage" src="/gallery/about.jpeg"></img>
               <div className="aboutTextbox">
                 <p className="aboutText">I fell in love with photography about 10 years ago and recently decided to specialize in just boudoir.  
                   I found my calling and my <span className="emphasisText">passion</span> within the realm of photography.<br/><br/>
@@ -257,17 +399,27 @@ class Home extends React.Component {
             <div className="contactContainer">
               <form className="contactForm" onSubmit={e => this.submitForm(e)}>
                 <p className="contactFormHeader">Want to submit a request or ask a question? Just fill out this form!</p>
-                <div className="inputBox">
-                  <p className="inputText">Name</p>
-                  <input className="contactInput" onChange={e => this.setName(e)}></input>
+                <div className={this.state.name !== "" ? "inputBox raised" : "inputBox"} id="inputbox1">
+                  <p className="inputText">Name *</p>
+                  <input className="contactInput" onChange={e => this.setName(e)} onClick={e => this.setActive(e, "name")} 
+                    onMouseDown={e => e.stopPropagation()} spellCheck="false" required></input>
+                  <div className="contactInputBottom"></div>
                 </div>
-                <div className="inputBox">
-                  <p className="inputText">Email</p>
-                  <input className="contactInput" onChange={e => this.setEmail(e)}></input>
+                <div className={this.state.email !== "" ? "inputBox raised" : "inputBox"} id="inputbox2">
+                  <p className="inputText">Email *</p>
+                  <input className="contactInput" onChange={e => this.setEmail(e)} onClick={e => this.setActive(e, "email")} 
+                    onMouseDown={e => e.stopPropagation()} spellCheck="false" required></input>
+                  <div className="contactInputBottom"></div>
                 </div>
-                <div className="inputBox">
+                <div className={this.state.message !== "" && !(this.state.textareaActive) ? "inputBox textareaBox raised" : 
+                  (this.state.textareaActive ? "inputBox textareaBox active" : "inputBox textareaBox")} id="inputbox3">
                   <p className="inputText">Message</p>
-                  <input className="contactInput" onChange={e => this.setMessage(e)}></input>
+                  <textarea className="contactInput textarea" onChange={e => this.setMessage(e)} onClick={e => this.setActive(e, "message")} 
+                    onMouseDown={e => e.stopPropagation()} spellCheck="false"></textarea>
+                  <div className="contactInputBottom"></div>
+                  <div className="textareaSide"></div>
+                  <div className="textareaSide"></div>
+                  <div className="contactInputBottom"></div>
                 </div>
                 <button type="submit" className="submitButton">Submit</button>
               </form>
@@ -300,17 +452,26 @@ class Home extends React.Component {
         </main>
 
         <div className="fullScreen" id="fullscreen" onClick={e => this.closeImage()}>
+          <img className="fullScreenImage active" id="fullscreenimage0" src="/gallery/lal1.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage1" src="/gallery/lal2.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage2" src="/gallery/lal3.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage3" src="/gallery/lal4.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage4" src="/gallery/lal5.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage5" src="/gallery/lal6.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage6" src="/gallery/lal7.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage7" src="/gallery/lal8.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage8" src="/gallery/lal9.jpeg"></img>
+          <img className="fullScreenImage" id="fullscreenimage9" src="/gallery/lal10.jpeg"></img>
           <div className="arrowBox" id="arrowboxleft" onClick={e => this.changeImage(e, -1)}>
             <div className="arrow"></div>
           </div>
-          <img className="fullScreenImage" id="fullscreenimage" src="/gallery/lal1.jpeg"></img>
           <div className="arrowBox" id="arrowboxright" onClick={e => this.changeImage(e, 1)}>
             <div className="arrow"></div>
           </div>
         </div>
         <div className="fullScreenShadow" id="fullscreenshadow"></div>
 
-      </container>
+      </div>
     )
   }
 }
