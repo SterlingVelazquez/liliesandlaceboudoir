@@ -21,7 +21,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    
+
   }
 
   mouseDownHandler(e) {
@@ -248,7 +248,7 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div id="container">
+      <div className="container" id="container">
         <Head>
           <title>Lilies and Lace Boudoir</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
