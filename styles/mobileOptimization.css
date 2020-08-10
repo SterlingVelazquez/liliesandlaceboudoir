@@ -364,7 +364,7 @@
     .arrowBox {
         right:86vw;
         top:auto;
-        bottom:4rem;
+        bottom:2rem;
         transform:rotateZ(45deg);
         background-color:rgba(0, 0, 0, 0.787);
     }
@@ -736,10 +736,16 @@
     }
 
     .arrowBox {
-        right:79vw;
+        right:85vw;
+        width:80px; height:80px;
     }
     .arrowBox:nth-child(12) {
-        left:79vw;
+        left:85vw;
+    }
+    .arrow {
+        width:30px;
+        height:30px;
+        top:50%; left:50%;
     }
 }
 
@@ -981,10 +987,16 @@
     }
 
     .arrowBox {
-        right:76vw;
+        width:65px;
+        height:65px;
+        right:84vw;
     }
     .arrowBox:nth-child(12) {
-        left:76vw;
+        left:84vw;
+    }
+    .arrow {
+        width:20px;
+        height:20px;
     }
 }
 
@@ -1167,10 +1179,17 @@
     }
 
     .arrowBox {
-        right:70vw;
+        right:80vw;
+        width:60px;
+        height:60px;
     }
     .arrowBox:nth-child(12) {
-        left:70vw;
+        left:80vw;
+    }
+    .arrow {
+        width:20px;
+        height:20px;
+        top:50%; left:50%;
     }
 }
 
@@ -1243,10 +1262,10 @@
     }
 
     .arrowBox {
-        right:65vw;
+        right:75vw;
     }
     .arrowBox:nth-child(12) {
-        left:65vw;
+        left:75vw;
     }
 }
 
@@ -1300,10 +1319,16 @@
     }
 
     .arrowBox {
-        right:60vw;
+        width:50px;
+        height:50px;
+        right:78vw;
     }
     .arrowBox:nth-child(12) {
-        left:60vw;
+        left:78vw;
+    }
+    .arrow {
+        width:18px;
+        height:18px;
     }
 }
 
@@ -1370,9 +1395,9 @@
     }
 
     .arrowBox {
-        right:55vw;
+        right:74vw;
     }
     .arrowBox:nth-child(12) {
-        left:55vw;
+        left:74vw;
     }
 }

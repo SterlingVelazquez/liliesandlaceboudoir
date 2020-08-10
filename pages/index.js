@@ -21,13 +21,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-    document.getElementById("wrapper").scrollTo({
-      top:10000,
-    })
-    document.getElementById("wrapper").scrollTo({
-      top:0,
-      behavior:"smooth"
-    })
+    
   }
 
   mouseDownHandler(e) {
