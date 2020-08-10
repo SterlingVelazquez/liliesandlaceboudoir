@@ -9,10 +9,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  overflow:hidden;
-}
-
 img {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -71,7 +67,7 @@ img {
 .wrapper {
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   perspective: 2px;
   animation:wrapper 1.6s;
 }
