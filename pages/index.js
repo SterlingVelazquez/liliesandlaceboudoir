@@ -183,7 +183,6 @@ class Home extends React.Component {
   setActive(e, input) {
     e.stopPropagation();
     if (input === "name" && !(document.getElementById("inputbox1").className.includes("active"))) {
-      console.log("hello")
       if (document.getElementById("inputbox2").className.includes("active")) {
         document.getElementById("inputbox2").classList.toggle("active");
       } else if (document.getElementById("inputbox3").className.includes("active")) {
@@ -225,18 +224,19 @@ class Home extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    console.log(emailTest.test(this.state.email.toLowerCase()));
-    /*Email.send({
-      Host : "smtp.elasticemail.com",
-      Username : "sterlin.velazquez37@gmail.com",
-      Password : "F858F773A3DC6E81629BC9DA194AB27B3802",
-      To : 'sterlin.velazquez37@gmail.com',
-      From : this.state.email,
-      Subject : "Request from " + this.state.name,
-      Body : this.state.message,
-    }).then(
-      message => alert(message)
-    );*/
+    if (emailTest.test(this.state.email.toLowerCase())) {
+      /*Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "sterlin.velazquez37@gmail.com",
+        Password : "F858F773A3DC6E81629BC9DA194AB27B3802",
+        To : 'sterlin.velazquez37@gmail.com',
+        From : this.state.email,
+        Subject : "Request from " + this.state.name,
+        Body : this.state.message,
+      }).then(
+        message => alert(message)
+      );*/
+    }
   }
   resetInputs() {
     document.activeElement.blur();
