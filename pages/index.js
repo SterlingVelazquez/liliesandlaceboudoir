@@ -24,7 +24,7 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
-
+    document.getElementById("fullscreen").style.display="block";
   }
 
   mouseDownHandler(e) {
@@ -448,7 +448,7 @@ class Home extends React.Component {
 
         </main>
 
-        <div className="fullScreen" id="fullscreen" onClick={e => this.closeImage()}>
+        <div className="fullScreen" id="fullscreen" style={{display:"none"}} onClick={e => this.closeImage()}>
           <img className="fullScreenImage active" id="fullscreenimage0" src="https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg"></img>
           <img className="fullScreenImage" id="fullscreenimage1" src="https://i.pinimg.com/1200x/2f/fc/e1/2ffce13a1a40c73c08f349e9a9be6bac.jpg"></img>
           <img className="fullScreenImage" id="fullscreenimage2" src="https://i.pinimg.com/1200x/8a/bd/9b/8abd9b98ef2b8b92062f58b9bc52e2c1.jpg"></img>
