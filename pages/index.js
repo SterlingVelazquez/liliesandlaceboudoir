@@ -3,8 +3,11 @@ import Email from '../public/smtp.js'
 
 var pos = { left: 0, x: 0, initialX: 0 },
     pressed = false,
-    images = ["/gallery/lal1.jpeg", "/gallery/lal2.jpeg", "/gallery/lal4.jpeg", "/gallery/lal3.jpeg", "/gallery/lal5.jpeg", 
-    "/gallery/lal6.jpeg", "/gallery/lal7.jpeg", "/gallery/lal8.jpeg", "/gallery/lal9.jpeg", "/gallery/lal10.jpeg"],
+    images = ["https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg", "https://i.pinimg.com/1200x/2f/fc/e1/2ffce13a1a40c73c08f349e9a9be6bac.jpg", 
+    "https://i.pinimg.com/1200x/8a/bd/9b/8abd9b98ef2b8b92062f58b9bc52e2c1.jpg", "https://i.pinimg.com/1200x/db/16/4a/db164a790d6250c37aa6b3db0c71302f.jpg", 
+    "https://i.pinimg.com/1200x/84/0b/f2/840bf2243ab66ae035d0b757dc75b652.jpg", "https://i.pinimg.com/1200x/f8/fe/09/f8fe0925d43217508d2c49ef0d3cffd0.jpg", 
+    "https://i.pinimg.com/1200x/cd/31/b5/cd31b5205b970459ad9a0d41da87a1bb.jpg", "https://i.pinimg.com/1200x/b3/19/09/b31909b5216d4ab784f3f7cf315bdeba.jpg", 
+    "https://i.pinimg.com/1200x/86/a0/7f/86a07fd24a4e43bb2164f41fac1e2451.jpg", "https://i.pinimg.com/1200x/78/4f/36/784f36725bfaf32a67df6d8c780284c7.jpg"],
     imageIndex = 0;
 const emailTest = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 
@@ -276,7 +279,7 @@ class Home extends React.Component {
 
           <section className="titleSection">
             <div className="extendTitleImage"></div>
-            <img className="titleImage" src="/gallery/laltitle.jpeg"></img>
+            <img className="titleImage" src="https://i.pinimg.com/1200x/0e/37/ec/0e37ec61f932f1a090868e22383c4bb4.jpg"></img>
             <section className="titleForeground">
               <img className="titleLogo" src="logo.png"></img>
               <div className="navBar">
@@ -292,7 +295,7 @@ class Home extends React.Component {
           <div className="divSplit"></div>
 
           <section className="gallerySection">
-            <img className="galleryBackground" src="/gallery/lalgallery.jpeg"></img>
+            <img className="galleryBackground" src="https://i.pinimg.com/1200x/60/dd/84/60dd84b48a2f4eeacd0690d5387b9461.jpg"></img>
             <div className="galleryHeaderContainer">
               <div className="galleryHeaderSide"></div>
               <p className="galleryHeader">Gallery</p>
@@ -300,23 +303,23 @@ class Home extends React.Component {
             </div>
             <div className="galleryBackdrop"></div>
             <div className="galleryContainer" id="gallerycontainer" onMouseDown={e => this.mouseDownHandler(e)}>
-              <img className="galleryImage" src="/gallery/lal1.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(0)}></img>
-              <img className="galleryImage" src="/gallery/lal2.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(1)}></img>
-              <img className="galleryImage" src="/gallery/lal4.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(2)}></img>
-              <img className="galleryImage" src="/gallery/lal3.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(3)}></img>
-              <img className="galleryImage" src="/gallery/lal5.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(4)}></img>
-              <img className="galleryImage" src="/gallery/lal6.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(5)}></img>
-              <img className="galleryImage" src="/gallery/lal7.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(6)}></img>
-              <img className="galleryImage" src="/gallery/lal8.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(7)}></img>
-              <img className="galleryImage" src="/gallery/lal9.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(8)}></img>
-              <img className="galleryImage" src="/gallery/lal10.jpeg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(9)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(0)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/2f/fc/e1/2ffce13a1a40c73c08f349e9a9be6bac.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(1)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/8a/bd/9b/8abd9b98ef2b8b92062f58b9bc52e2c1.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(2)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/db/16/4a/db164a790d6250c37aa6b3db0c71302f.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(3)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/84/0b/f2/840bf2243ab66ae035d0b757dc75b652.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(4)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/f8/fe/09/f8fe0925d43217508d2c49ef0d3cffd0.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(5)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/cd/31/b5/cd31b5205b970459ad9a0d41da87a1bb.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(6)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/b3/19/09/b31909b5216d4ab784f3f7cf315bdeba.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(7)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/86/a0/7f/86a07fd24a4e43bb2164f41fac1e2451.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(8)}></img>
+              <img className="galleryImage" src="https://i.pinimg.com/1200x/78/4f/36/784f36725bfaf32a67df6d8c780284c7.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(9)}></img>
             </div>
           </section>
 
           <div className="divSplit"></div>
 
           <section className="aboutSection">
-            <img className="aboutBackground" src="/gallery/lal1.jpeg"></img>
+            <img className="aboutBackground" src="https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg"></img>
             <div className="aboutHeaderContainer">
             <div className="aboutHeaderSide"></div>
               <p className="aboutHeader">About</p>
@@ -330,7 +333,7 @@ class Home extends React.Component {
                   <p className="aboutSideTextCopyMobile">Hello, I'm Lily.</p>
                   <p className="aboutSideTextMobile">Hello, I'm Lily.</p>
                 </div>
-                <img className="aboutImage" src="/gallery/about.jpeg"></img>
+                <img className="aboutImage" src="https://i.pinimg.com/1200x/04/d2/e5/04d2e5c03e59b5fc5b29ddff54097939.jpg"></img>
               </div>
               <div className="aboutTextbox">
                 <p className="aboutText">I fell in love with photography about 10 years ago and recently decided to specialize in just boudoir.  
@@ -363,7 +366,7 @@ class Home extends React.Component {
               <p className="serviceHeader">The Lilies and Lace Experience</p>
               <div className="serviceHeaderSide"></div>
             </div>
-            <img className="serviceImage" src="/gallery/lalservices.jpeg"></img>
+            <img className="serviceImage" src="https://i.pinimg.com/1200x/83/2e/fe/832efe47371cef6bb146be00f081baae.jpg"></img>
             <div className="serviceContainer">
               <p className="serviceText">
                 I will always go above and beyond to make everyone feel more than comfortable, at ease, beautiful and yes, sexy.<br/><br/>
@@ -446,16 +449,16 @@ class Home extends React.Component {
         </main>
 
         <div className="fullScreen" id="fullscreen" onClick={e => this.closeImage()}>
-          <img className="fullScreenImage active" id="fullscreenimage0" src="/gallery/lal1.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage1" src="/gallery/lal2.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage2" src="/gallery/lal3.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage3" src="/gallery/lal4.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage4" src="/gallery/lal5.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage5" src="/gallery/lal6.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage6" src="/gallery/lal7.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage7" src="/gallery/lal8.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage8" src="/gallery/lal9.jpeg"></img>
-          <img className="fullScreenImage" id="fullscreenimage9" src="/gallery/lal10.jpeg"></img>
+          <img className="fullScreenImage active" id="fullscreenimage0" src="https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage1" src="https://i.pinimg.com/1200x/2f/fc/e1/2ffce13a1a40c73c08f349e9a9be6bac.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage2" src="https://i.pinimg.com/1200x/8a/bd/9b/8abd9b98ef2b8b92062f58b9bc52e2c1.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage3" src="https://i.pinimg.com/1200x/db/16/4a/db164a790d6250c37aa6b3db0c71302f.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage4" src="https://i.pinimg.com/1200x/84/0b/f2/840bf2243ab66ae035d0b757dc75b652.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage5" src="https://i.pinimg.com/1200x/f8/fe/09/f8fe0925d43217508d2c49ef0d3cffd0.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage6" src="https://i.pinimg.com/1200x/cd/31/b5/cd31b5205b970459ad9a0d41da87a1bb.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage7" src="https://i.pinimg.com/1200x/b3/19/09/b31909b5216d4ab784f3f7cf315bdeba.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage8" src="https://i.pinimg.com/1200x/86/a0/7f/86a07fd24a4e43bb2164f41fac1e2451.jpg"></img>
+          <img className="fullScreenImage" id="fullscreenimage9" src="https://i.pinimg.com/1200x/78/4f/36/784f36725bfaf32a67df6d8c780284c7.jpg"></img>
           <div className="arrowBox" id="arrowboxleft" onClick={e => this.changeImage(e, -1)}>
             <div className="arrow"></div>
           </div>
