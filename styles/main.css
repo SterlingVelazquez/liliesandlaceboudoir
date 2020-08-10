@@ -928,7 +928,12 @@ img {
 
 @keyframes wrapper {
   0% {
+    display:none;
     pointer-events:none;
+  } 80% {
+    display:none;
+  } 81% {
+    display:block;
   } 99% {
     pointer-events:none;
   } 100% {
