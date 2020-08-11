@@ -279,7 +279,7 @@ class Home extends React.Component {
 
           <section className="titleSection">
             <div className="extendTitleImage"></div>
-            <img className="titleImage" src="https://i.pinimg.com/1200x/0e/37/ec/0e37ec61f932f1a090868e22383c4bb4.jpg"></img>
+            <img className="titleImage" src="https://i.pinimg.com/originals/0e/37/ec/0e37ec61f932f1a090868e22383c4bb4.jpg"></img>
             <section className="titleForeground">
               <img className="titleLogo" src="logo.png"></img>
               <div className="navBar">
@@ -295,7 +295,7 @@ class Home extends React.Component {
           <div className="divSplit"></div>
 
           <section className="gallerySection">
-            <img className="galleryBackground" src="https://i.pinimg.com/1200x/60/dd/84/60dd84b48a2f4eeacd0690d5387b9461.jpg"></img>
+            <img className="galleryBackground" src="https://i.pinimg.com/originals/60/dd/84/60dd84b48a2f4eeacd0690d5387b9461.jpg"></img>
             <div className="galleryHeaderContainer">
               <div className="galleryHeaderSide"></div>
               <p className="galleryHeader">Gallery</p>
@@ -319,7 +319,7 @@ class Home extends React.Component {
           <div className="divSplit"></div>
 
           <section className="aboutSection">
-            <img className="aboutBackground" src="https://i.pinimg.com/1200x/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg"></img>
+            <img className="aboutBackground" src="https://i.pinimg.com/originals/20/e8/15/20e815db15275375adea00c0597d3f9f.jpg"></img>
             <div className="aboutHeaderContainer">
             <div className="aboutHeaderSide"></div>
               <p className="aboutHeader">About</p>
@@ -366,7 +366,7 @@ class Home extends React.Component {
               <p className="serviceHeader">The Lilies and Lace Experience</p>
               <div className="serviceHeaderSide"></div>
             </div>
-            <img className="serviceImage" src="https://i.pinimg.com/1200x/83/2e/fe/832efe47371cef6bb146be00f081baae.jpg"></img>
+            <img className="serviceImage" src="https://i.pinimg.com/originals/83/2e/fe/832efe47371cef6bb146be00f081baae.jpg"></img>
             <div className="serviceContainer">
               <p className="serviceText">
                 I will always go above and beyond to make everyone feel more than comfortable, at ease, beautiful and yes, sexy.<br/><br/>
