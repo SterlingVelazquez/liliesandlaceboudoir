@@ -304,6 +304,9 @@
         font-size:62px;
         margin: 60px 30px 0 30px;
     }
+    .serviceHeaderContainer {
+        top:30px;
+    }
     .serviceHeaderSide {
         top:-1.3rem;
         width:4%;
@@ -401,11 +404,20 @@
         height:1400px;
     }
 
+    .galleryHeaderContainer,
+    .aboutHeaderContainer {
+        top:80px;
+    }
+    .serviceHeaderContainer {
+        top:30px;
+    }
+    .contactHeaderContainer {
+        top:60px;
+    }
     .galleryHeader,
     .aboutHeader,
     .contactHeader {
         font-size:90px;
-        margin-top:40px;
     }
     .galleryHeaderSide,
     .aboutHeaderSide,
@@ -591,6 +603,14 @@
         top:25rem;
         width:250px;
         text-align:left;
+    }
+
+    .galleryHeaderContainer,
+    .aboutHeaderContainer {
+        top:20px;
+    }
+    .contactHeaderContainer {
+        top:20px;
     }
 
     .galleryHeader,
@@ -788,6 +808,17 @@
         width:100%;
         font-size:24px;
         backdrop-filter: blur(3px);
+    }
+
+    .galleryHeaderContainer,
+    .aboutHeaderContainer {
+        top:40px;
+    }
+    .serviceHeaderContainer {
+        top:20px;
+    }
+    .contactHeaderContainer {
+        top:10px;
     }
 
     .galleryHeader,
