@@ -89,7 +89,7 @@ class Home extends React.Component {
 
   scrollToDiv(div) {
     var width = window.innerWidth;
-    if (width > 1390) {
+    if (width > 2040) {
       if (div === "gallery") {
         document.getElementById("wrapper").scrollTo({
           top:960,
@@ -102,7 +102,41 @@ class Home extends React.Component {
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5800,
+          top:5600,
+          behavior:"smooth"
+        })
+      } 
+    } else if (width > 1680) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:960,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:2325,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5400,
+          behavior:"smooth"
+        })
+      }
+    } else if (width > 1390) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:960,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:2325,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:5230,
           behavior:"smooth"
         })
       } 
@@ -119,7 +153,7 @@ class Home extends React.Component {
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5800,
+          top:4880,
           behavior:"smooth"
         })
       } 
@@ -136,7 +170,7 @@ class Home extends React.Component {
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5800,
+          top:5250,
           behavior:"smooth"
         })
       } 
@@ -153,24 +187,75 @@ class Home extends React.Component {
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5800,
+          top:4550,
           behavior:"smooth"
         })
       }
-    } else if (width > 0) {
+    } else if (width > 455) {
       if (div === "gallery") {
         document.getElementById("wrapper").scrollTo({
-          top:720,
+          top:740,
           behavior:"smooth"
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1465,
+          top:1480,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4000,
+          top:4260,
+          behavior:"smooth"
+        })
+      }
+    } else if (width > 360) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:740,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:1480,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:4450,
+          behavior:"smooth"
+        })
+      }
+    } else if (width > 314) {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:740,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:1480,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:4400,
+          behavior:"smooth"
+        })
+      }
+    } else {
+      if (div === "gallery") {
+        document.getElementById("wrapper").scrollTo({
+          top:740,
+          behavior:"smooth"
+        })
+      } else if (div === "about") {
+        document.getElementById("wrapper").scrollTo({
+          top:1480,
+          behavior:"smooth"
+        })
+      } else {
+        document.getElementById("wrapper").scrollTo({
+          top:4500,
           behavior:"smooth"
         })
       }
@@ -379,9 +464,33 @@ class Home extends React.Component {
               </p>
             </div>
             <div className="reviewCards">
-              <div className="card"></div>
-              <div className="card"></div>
-              <div className="card"></div>
+              <div className="innerCard" id="innercard1" onClick={e => document.getElementById("innercard1").classList.toggle("active")}>
+                <div className="frontCard">
+                  <p className="frontCardText">"Lily was very patient, professional, she made me feel so comfortable. A great experience!"</p>
+                  <p className="cardAuthor">Mrs. C</p>
+                  <button className="flipCardButton">See Full Review<div className="reviewArrow"></div></button>
+                </div>
+                <div className="backCard">
+                  <p className="backCardText">If you're thinking of doing a boudoir shoot, think no more. I definitely recommend Lily! Days leading up to it I almost canceled (I actually did and 
+                    she convinced me otherwise). I am so glad I went for it!<br/><br/>
+                    I had fears as any other woman would, somewhat insecure of some flaws. However, Lily was very patient, professional, she made me feel so comfortable. A great experience!<br/><br/>Thank you ♡</p>
+                  <button className="flipCardButton"></button>
+                </div>
+              </div>
+              <div className="innerCard" id="innercard2" onClick={e => document.getElementById("innercard2").classList.toggle("active")}>
+                <div className="frontCard">
+                  <p className="frontCardText">"Went out of her way and beyond to make me feel completely comfortable and beautiful... She definitely knows her angels!"</p>
+                  <p className="cardAuthor">Ms. D</p>
+                  <button className="flipCardButton">See Full Review<div className="reviewArrow"></div></button>
+                </div>
+                <div className="backCard">
+                  <p className="backCardText">I arrived at the photoshoot nervous but excited at the same time, I was greeted by Lily and her team. They took me to get my hair and makeup done, it felt so nice 
+                  to get pampered and when they were done, they took me back to the studio for the photoshoot. Lily went out of her way and beyond to make me feel completely comfortable and beautiful. She guided 
+                  me with some poses, which made me feel awkward due to my weight issue, but she was so patient with me and professional that I was able to relax and enjoy the shoot.<br/><br/>
+                  She definitely knows her angels!!!</p>
+                  <button className="flipCardButton"></button>
+                </div>
+              </div>
             </div>
           </section>
 

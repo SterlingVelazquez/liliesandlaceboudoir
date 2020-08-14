@@ -58,6 +58,13 @@
     }
 }
 
+@media only screen and (max-width: 1870px) {
+
+    .backCardText {
+        font-size:20px;
+    }
+}
+
 @media only screen and (max-width: 1680px) {
 
     .galleryBackground {
@@ -136,7 +143,7 @@
     }
 
     .serviceSection {
-        height:1550px;
+        height:1500px;
     }
     .serviceHeader {
         font-size:85px;
@@ -153,10 +160,7 @@
     }
     .reviewCards {
         top:330px;
-        height:480px;
-    }
-    .card {
-        width:20rem;
+        height:400px;
     }
 
     .contactContainer {
@@ -321,10 +325,13 @@
     }
     .reviewCards {
         top:300px;
-        height:360px;
+        height:380px;
     }
-    .card {
-        width:15rem;
+    .innerCard {
+        width:42.5%;
+    }
+    .backCardText {
+        font-size:18px;
     }
 
     .contactContainer {
@@ -538,16 +545,23 @@
     }
     .reviewCards {
         top:140px;
-        height:300px;
+        height:360px;
     }
-    .card {
-        width:13rem;
+    .innerCard {
+        width:42%;
+    }
+    .frontCardText {
+        font-size:24px;
+        padding:0 1rem;
+    }
+    .backCardText {
+        font-size: 16px;
     }
 
     .contactContainer {
         width:670px;
         top:230px;
-      }
+    }
     .contactForm {
         width:500px;
         left:0;
@@ -724,10 +738,24 @@
         top:100px;
         height:200px;
     }
-    .card {
-        width:42%;
+    .innerCard {
+        width:90%;
         margin: 1rem 20px 0 20px;
         margin-top:1rem;
+    }
+    .frontCardText {
+        font-size:22px;
+        padding:0 1rem;
+    }
+    .backCardText {
+        font-size: 16px;
+        padding:0 0.5rem;
+    }
+    .cardAuthor {
+        font-size:24px;
+    }
+    .flipCardButton {
+        padding: 20px 70px 3% 25px;
     }
 
     .contactSection {
@@ -925,7 +953,7 @@
     }
 
     .serviceSection {
-        height:1300px;
+        height:1500px;
     }
     .serviceHeader {
         font-size:52px;
@@ -942,10 +970,10 @@
         padding:1.5rem;
     }
     .reviewCards {
-        top:100px;
-        height:100px;
+        top:90px;
+        height:270px;
     }
-    .card {
+    .innerCard {
         width:100%;
         margin: 0;
         margin-top:1rem;
@@ -1135,11 +1163,37 @@
         bottom:-5rem;
     }
 
+    .serviceSection {
+        height:1700px;
+    }
     .serviceHeader {
         font-size: 48px;
     }
     .serviceText {
         font-size:16px;
+    }
+    .reviewCards {
+        top:100px;
+        height:340px;
+    }
+    .innerCard {
+        width:100%;
+        margin: 1rem 20px 0 0;
+        margin-top:1rem;
+    }
+    .frontCardText {
+        font-size:20px;
+        padding:0 1rem;
+    }
+    .backCardText {
+        font-size: 16px;
+        padding:0 0.5rem;
+    }
+    .cardAuthor {
+        font-size:22px;
+    }
+    .flipCardButton {
+        padding: 20px 70px 10% 25px;
     }
 
     .contactSection {
@@ -1297,6 +1351,9 @@
     .serviceText {
         font-size:15px;
     }
+    .backCardText {
+        font-size: 15px;
+    }
 
     .arrowBox {
         right:75vw;
@@ -1353,6 +1410,25 @@
     }
     .serviceText {
         font-size:14px;
+    }
+    .reviewCards {
+        height:370px;
+    }
+    .frontCardText {
+        font-size:20px;
+        padding:0 1rem;
+    }
+    .backCardText {
+        font-size: 14px;
+    }
+    .flipCardButton {
+        font-size: 18px;
+        padding: 20px 70px 10% 32px;
+    }
+    .reviewArrow {
+        width:13px;
+        height:13px;
+        margin:3px 0 0 74px;
     }
 
     .arrowBox {
@@ -1425,6 +1501,24 @@
     }
     .serviceText {
         font-size:13px;
+    }
+    .frontCardText {
+        font-size:18px;
+        padding:0 0.5rem;
+    }
+    .backCardText {
+        font-size: 13px;
+    }
+    .flipCardButton {
+        font-size: 14px;
+        padding: 20px 70px 10% 37px;
+    }
+    .reviewArrow {
+        width:12px;
+        height:12px;
+        border-bottom: 3px solid rgb(238, 225, 225);
+        border-right: 3px solid rgb(238, 225, 225);
+        margin:1px 0 0 62px;
     }
 
     .submitButton {

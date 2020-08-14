@@ -443,7 +443,7 @@ img {
 .serviceSection {
   position:relative;
   width:100%;
-  height:1750px;
+  height:1550px;
   z-index:-1;
   overflow:hidden;
 }
@@ -513,21 +513,108 @@ img {
   font-size:28px;
   font-family:'Quicksand', 'sans-serif';
 }
+
 .reviewCards {
   position:relative;
   width:100%;
-  height:600px;
+  height:350px;
   top:400px;
   text-align:center;
+  perspective: 1000px;
+  opacity:0.85;
 }
-.card {
+.innerCard {
   position:relative;
   display:inline-block;
   height:100%;
-  width:25rem;
-  background:rgba(0, 0, 0, 0.746);
+  width:38%;
+  max-width:58rem;
   border: 2px solid rgb(97, 97, 97);
+  box-shadow:0 0 10px rgb(97, 97, 97);
   margin:0 30px;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
+  transition:0.8s;
+  cursor:pointer;
+}
+.innerCard.active {
+  transform: rotateX(180deg);
+  border: 2px solid rgb(219, 219, 219);
+  box-shadow:0 0 10px rgb(255, 255, 255);
+}
+.frontCard, 
+.backCard {
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.frontCard {
+  background:rgb(0, 0, 0);
+}
+.backCard {
+  background:rgb(196, 180, 180);
+  transform: rotateX(180deg);
+}
+.frontCardText {
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color:rgb(255, 227, 227);
+  padding:2rem;
+  font-family: 'Quicksand', 'sans-serif';
+  font-size:26px;
+  font-weight:400;
+  font-style: italic;
+  letter-spacing:1px;
+}
+.backCardText {
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  color:rgb(0, 0, 0);
+  padding:2rem;
+  font-family: 'Quicksand', 'sans-serif';
+  font-size:22px;
+  font-weight:500;
+}
+.cardAuthor {
+  position:absolute;
+  color:rgb(241, 216, 216);
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  font-family: 'Quicksand', 'sans-serif';
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+.flipCardButton {
+  position:absolute;
+  display:inline-table;
+  color:rgb(238, 225, 225);
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  font-family: 'Quicksand', 'sans-serif';
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:1px;
+  padding: 20px 70px 5% 20px;
+  cursor:pointer;
+}
+.reviewArrow {
+  position:absolute;
+  display:inline-table;
+  width:15px;
+  height:15px;
+  left:50%;
+  margin:3px 0 0 80px;
+  transform:translateX(-50%);
+  border-bottom: 4px solid rgb(238, 225, 225);
+  border-right: 4px solid rgb(238, 225, 225);
+  transform:rotateZ(45deg);
 }
 
 .contactSection {
