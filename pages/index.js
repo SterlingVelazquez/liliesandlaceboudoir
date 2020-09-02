@@ -97,12 +97,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:2325,
+          top:3125,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5600,
+          top:6510,
           behavior:"smooth"
         })
       } 
@@ -114,12 +114,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:2325,
+          top:2900,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5400,
+          top:6075,
           behavior:"smooth"
         })
       }
@@ -131,12 +131,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:2325,
+          top:2900,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5230,
+          top:5975,
           behavior:"smooth"
         })
       } 
@@ -148,12 +148,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:2160,
+          top:2760,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4880,
+          top:5600,
           behavior:"smooth"
         })
       } 
@@ -165,12 +165,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:2100,
+          top:2600,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:5250,
+          top:5950,
           behavior:"smooth"
         })
       } 
@@ -182,12 +182,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1730,
+          top:2200,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4550,
+          top:5250,
           behavior:"smooth"
         })
       }
@@ -199,12 +199,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1480,
+          top:2480,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4260,
+          top:5440,
           behavior:"smooth"
         })
       }
@@ -216,12 +216,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1480,
+          top:2480,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4450,
+          top:5560,
           behavior:"smooth"
         })
       }
@@ -233,12 +233,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1480,
+          top:2480,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4400,
+          top:5510,
           behavior:"smooth"
         })
       }
@@ -250,12 +250,12 @@ class Home extends React.Component {
         })
       } else if (div === "about") {
         document.getElementById("wrapper").scrollTo({
-          top:1480,
+          top:2445,
           behavior:"smooth"
         })
       } else {
         document.getElementById("wrapper").scrollTo({
-          top:4500,
+          top:5600,
           behavior:"smooth"
         })
       }
@@ -306,7 +306,8 @@ class Home extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    if (emailTest.test(this.state.email.toLowerCase())) {
+    if (emailTest.test(this.state.email.toLowerCase()) && !(document.getElementById("submitbutton").className.includes("active"))) {
+      document.getElementById("submitbutton").classList.toggle("active");
       /*Email.send({
         Host : "smtp.elasticemail.com",
         Username : "sterlin.velazquez37@gmail.com",
@@ -399,6 +400,15 @@ class Home extends React.Component {
               <img className="galleryImage" src="https://i.pinimg.com/1200x/86/a0/7f/86a07fd24a4e43bb2164f41fac1e2451.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(8)}></img>
               <img className="galleryImage" src="https://i.pinimg.com/1200x/78/4f/36/784f36725bfaf32a67df6d8c780284c7.jpg" onMouseDown={e => e.preventDefault()} onClick={e => this.openImage(9)}></img>
             </div>
+            <div className="beforeafter">
+              <img className="beforeafterimage" src="https://i.pinimg.com/originals/7d/fe/2a/7dfe2a01ffc65b61775dc2222d8fccf7.jpg"></img>
+              <img className="beforeafterimage" src="https://i.pinimg.com/originals/2f/6e/b5/2f6eb5143400d28b70c8f33a6554f877.jpg"></img>
+              <div className="beforeaftertextdiv">
+                <p className="beforeaftertext">Getting a makeover is never overrated!</p>
+              </div>
+              <img className="beforeafterimage" src="https://i.pinimg.com/originals/2f/f0/e4/2ff0e452e684a84031f974f55d2c7aaa.jpg"></img>
+              <img className="beforeafterimage" src="https://i.pinimg.com/originals/86/a0/7f/86a07fd24a4e43bb2164f41fac1e2451.jpg"></img>
+            </div>
           </section>
 
           <div className="divSplit"></div>
@@ -462,6 +472,9 @@ class Home extends React.Component {
                 day as well as answer any questions and concerns that you might have. I’m super accessible and will always get back to every client.<br/><br/>
                 Hope to hear from you soon!
               </p>
+            </div>
+            <div className="reviewHeader">
+              <p className="reviewHeaderText">Love Notes from Clients</p>
             </div>
             <div className="reviewCards">
               <div className="innerCard" id="innercard1" onClick={e => document.getElementById("innercard1").classList.toggle("active")}>
@@ -527,7 +540,10 @@ class Home extends React.Component {
                   <div className="textareaSide"></div>
                   <div className="contactInputBottom"></div>
                 </div>
-                <button type="submit" className="submitButton">Submit</button>
+                <button type="submit" className="submitButton" id="submitbutton">
+                  <div className="checkmark"></div>
+                  <p className="submitButtonText">Submit</p>
+                </button>
               </form>
               <div className="contactDivider"></div>
               <div className="contactInfo">
@@ -554,6 +570,11 @@ class Home extends React.Component {
           </section>
 
           <div className="divSplit"></div>
+
+          <footer className="footer">
+            <img className="footerImage" src="logo.png"></img>
+            <p className="footerText">© Lilies and Lace Boudoir. All Rights Reserved.</p>
+          </footer>
 
         </main>
 

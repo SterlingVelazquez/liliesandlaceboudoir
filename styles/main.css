@@ -12,6 +12,9 @@
 img {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+p, div, img {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -140,7 +143,7 @@ img {
 
 .gallerySection {
   position:relative;
-  height:1350px;
+  height:2175px;
   z-index:-1;
 }
 .galleryBackground {
@@ -150,7 +153,7 @@ img {
   transform: translateZ(-1px) scale(1.6);
   transform-origin:top;
   object-fit:cover;
-  height:2000px;
+  height:115%;
   width:100%;
   z-index:-1;
 }
@@ -168,7 +171,6 @@ img {
   font-family: 'Dancing Script', cursive;
   font-weight:700;
   font-size:110px;
-  letter-spacing:5px;
 }
 .galleryHeaderSide {
   position:relative;
@@ -230,6 +232,66 @@ img {
   background: no-repeat -9999px -9999px;
 }
 
+.beforeafter {
+  position:absolute;
+  display:grid;
+  grid-template-columns: 1fr 800px 1fr;
+  align-content:center;
+  align-items:center;
+  justify-content:center;
+  justify-items:center;
+  top:1425px;
+  height:500px;
+  width:100%;
+  text-align:center;
+  perspective: 1000px;
+  pointer-events:none;
+}
+.beforeafterimage {
+  position:absolute;
+  height:550px;
+  width:auto;
+  box-shadow:0 0 30px black;
+}
+.beforeafterimage:nth-child(1) {
+  grid-column: 1 / 2;
+  transform:rotateY(-2deg);
+  right:335px;
+}
+.beforeafterimage:nth-child(2) {
+  grid-column: 1 / 2;
+  transform:rotateY(3deg) scale(1.04);
+  right:0;
+}
+.beforeafterimage:nth-child(4) {
+  grid-column: 3 / 4;
+  transform:rotateY(3deg);
+  left:370px;
+}
+.beforeafterimage:nth-child(5) {
+  grid-column: 3 / 4;
+  transform:rotateY(-2deg) scale(1.04);
+  left:0;
+}
+.beforeaftertextdiv {
+  grid-column: 2 / 3;
+  width:500px;
+  height:500px;
+  background:rgba(31, 31, 31, 0.5);
+  border-radius:100%;
+  box-shadow:0 0 30px rgba(255, 204, 204, 0.356);
+}
+.beforeaftertext {
+  position:relative;
+  margin-top:50%;
+  margin-left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:450px;
+  font-family:'Dancing Script', 'cursive';
+  font-size:68px;
+  color:rgba(255, 255, 255, 0.89);
+}
+
 .aboutSection {
   position:relative;
   width:100%;
@@ -261,7 +323,6 @@ img {
   font-family: 'Dancing Script', cursive;
   font-weight:700;
   font-size:110px;
-  letter-spacing:5px;
   filter:drop-shadow(0 0 6px rgb(37, 37, 37));
   backdrop-filter:drop-shadow(0 0 6px rgb(37, 37, 37));
 }
@@ -443,7 +504,7 @@ img {
 .serviceSection {
   position:relative;
   width:100%;
-  height:1550px;
+  height:1650px;
   z-index:-1;
   overflow:hidden;
 }
@@ -473,7 +534,6 @@ img {
   font-family: 'Dancing Script', cursive;
   font-weight:700;
   font-size:110px;
-  letter-spacing:5px;
   filter:drop-shadow(0 0 6px rgb(37, 37, 37));
   backdrop-filter:drop-shadow(0 0 6px rgb(37, 37, 37));
   white-space: nowrap;
@@ -514,11 +574,32 @@ img {
   font-family:'Quicksand', 'sans-serif';
 }
 
+.reviewHeader {
+  position:relative;
+  margin-top:25rem;
+  margin-left:50%;
+  transform:translateX(-50%);
+  height: 110px;
+  width:80%;
+  max-width:120rem;
+  background:linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.459) 20%, black 50%, rgba(0, 0, 0, 0.459) 80%, rgba(0, 0, 0, 0) 100%);
+  border-top: 2px solid rgba(211, 211, 211, 0.411);
+  border-bottom: 2px solid rgba(211, 211, 211, 0.411);
+}
+.reviewHeaderText {
+  position:absolute;
+  top:46%; left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  color:rgb(255, 227, 227);
+  font-family: 'Dancing Script', 'cursive';
+  font-size:65px;
+}
+
 .reviewCards {
   position:relative;
   width:100%;
   height:350px;
-  top:400px;
+  top:35px;
   text-align:center;
   perspective: 1000px;
   opacity:0.85;
@@ -623,6 +704,7 @@ img {
   height:800px;
   z-index:0;
   background:rgb(255, 227, 227);
+  overflow:hidden;
 }
 .contactHeaderContainer {
   position:absolute;
@@ -638,7 +720,6 @@ img {
   font-family: 'Dancing Script', cursive;
   font-weight:700;
   font-size:110px;
-  letter-spacing:5px;
   white-space: nowrap;
 }
 .contactHeaderSide {
@@ -793,6 +874,50 @@ img {
   letter-spacing:0.5px;
   color:rgb(150, 113, 113);
   cursor:pointer;
+  transition:top 0.5s ease-out, right 0.5s ease-out, margin-left 0.5s ease-out;
+}
+.submitButton.active {
+  pointer-events:none;
+  top: 110px;
+  animation:pulseButton 1s ease-in-out 0.9s;
+}
+.submitButton:after {
+  content: 'Request sent! You should receive an email from me in less than 24 hours.';
+  position: absolute;
+  text-align:left;
+  top:140px;
+  left:0;
+  width:260px;
+  font-size:20px;
+  overflow:hidden;
+  opacity:0;
+  transition:opacity 0.5s ease-out 1.6s;
+}
+.submitButton.active:after {
+  opacity:1;
+}
+.submitButtonText {
+  transition:0.5s;
+  transform:scale(1);
+}
+.submitButton.active .submitButtonText {
+  transform:scale(0);
+}
+.checkmark {
+  position:absolute;
+  top:48%; left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(38deg);
+  width:0px;
+  height:0px;
+  border-bottom:0px solid rgb(150, 113, 113);
+  border-right:0px solid rgb(150, 113, 113);
+  transition:width 0.4s ease-out 0.5s, height 0.6s ease-out 0.7s, border-bottom 0.4s ease-out 0.5s, border-right 0.6s ease-out 0.7s;
+}
+.submitButton.active .checkmark {
+  width:25px;
+  height:45px;
+  border-bottom:8px solid rgb(150, 113, 113);
+  border-right:8px solid rgb(150, 113, 113);
 }
 .contactDivider {
   position:absolute;
@@ -845,6 +970,29 @@ img {
 }
 .link:hover .linkText {
   letter-spacing:1px;
+}
+
+.footer {
+  position:relative;
+  text-align:center;
+  height:180px;
+  width:100%;
+  background:rgb(255, 244, 246);
+}
+.footerImage {
+  margin-top:-12px;
+  height: 180px;
+  width:auto;
+  filter:drop-shadow(0 0 1px black);
+  backdrop-filter:drop-shadow(0 0 1px black);
+}
+.footerText {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:7px;
+  font-family: 'Quicksand', 'sans-serif';
+  width:100%;
 }
 
 .fullScreen {
@@ -1022,5 +1170,15 @@ img {
     pointer-events:none;
   } 100% {
     pointer-events:all;
+  }
+}
+
+@keyframes pulseButton {
+  0% {
+    transform:scale(1)
+  } 50% {
+    transform:scale(1.4)
+  } 100% {
+    transform:scale(1)
   }
 }
