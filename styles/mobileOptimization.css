@@ -341,7 +341,7 @@
     }
 
     .galleryBackground {
-        top:-900px;
+        top:-1200px;
         height:110%;
     }
 
@@ -578,7 +578,7 @@
         display:none;
     }
     .galleryBackground {
-        top:-800px;
+        top:-1300px;
         height:130%;
     }
 
@@ -856,7 +856,7 @@
         height:1255px;
     }
     .galleryBackground {
-        top:-400px;
+        top:-1100px;
         height:100%;
     }
     .galleryBackdrop {
@@ -1124,7 +1124,7 @@
         height:1740px;
     }
     .galleryBackground {
-        top:-400px;
+        top:-1300px;
         height:100%;
     }
     .galleryBackdrop {
@@ -1444,7 +1444,7 @@
         margin: 5px 20px 0 20px;
     }
     .galleryBackground {
-        top:-380px;
+        top:-1300px;
         height:100%;
     }
 

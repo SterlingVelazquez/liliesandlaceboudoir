@@ -68,9 +68,7 @@ p, div, img {
 }
 
 .wrapper {
-  height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
   perspective: 2px;
   animation:wrapper 1.6s;
 }
@@ -143,12 +141,12 @@ p, div, img {
 
 .gallerySection {
   position:relative;
-  height:2175px;
+  height:2070px;
   z-index:-1;
 }
 .galleryBackground {
   position:absolute;
-  top:-1400px;
+  top:-1420px;
   left:0;
   transform: translateZ(-1px) scale(1.6);
   transform-origin:top;
@@ -506,13 +504,11 @@ p, div, img {
   width:100%;
   height:1650px;
   z-index:-1;
-  overflow:hidden;
 }
 .serviceImage {
   position:absolute;
-  top:650px;
+  top:-400px;
   left:0;
-  transform: translateZ(-1px) scale(1.6);
   transform-origin:bottom;
   object-fit:cover;
   height:2400px;
