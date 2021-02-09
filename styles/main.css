@@ -68,7 +68,7 @@ p, div, img {
 }
 
 .wrapper {
-  overflow-x: hidden;
+  overflow: hidden;
   perspective: 2px;
   animation:wrapper 1.6s;
 }
