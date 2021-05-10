@@ -805,27 +805,31 @@ p, div, img {
   position:absolute;
   bottom:0;
   height:2px;
-  width:0px;
+  width:500px;
+  transform:scaleX(0);
+  transform-origin: left;
   background: rgb(145, 22, 124);
   transition:0.3s;
   opacity:0;
 }
 .inputBox.active .contactInputBottom,
 .inputBox.raised .contactInputBottom {
-  width:500px;
+  transform:scaleX(1);
   opacity:1;
 }
 .textareaSide {
   position:absolute;
   bottom:0;
-  height:0px;
+  height:248px;
+  transform:scaleY(0);
+  transform-origin:bottom;
   width:2px;
   background: rgb(145, 22, 124);
   transition:0.3s;
   opacity:0;
 }
 .textareaBox.active .textareaSide {
-  height:248px;
+  transform:scaleY(1);
   opacity:1;
 }
 .textareaBox.active .textareaSide:nth-child(4) {
@@ -1106,11 +1110,11 @@ p, div, img {
 
 @keyframes introText {
   0% {
-    margin-left:7rem;
+    transform:translateX(-10%) translateY(-50%);
   } 25% {
-    margin-left:7rem;
+    transform:translateX(-10%) translateY(-50%);
   } 100% {
-    margin-left:-4rem;
+    transform:translateX(-50%) translateY(-50%);
   }
 }
 @keyframes letterRotate {
@@ -1128,13 +1132,9 @@ p, div, img {
 @keyframes flower {
   0% {
     opacity: 0;
-    filter:blur(10px);
-    backdrop-filter: blur(10px);
     transform:translateX(-50%) translateY(-50%);
   } 20% {
     opacity: 1;
-    filter:blur(0px);
-    backdrop-filter: blur(0px);
     transform:translateX(-50%) translateY(-50%);
   } 80% {
     transform:translateX(110%) translateY(-50%);
@@ -1144,12 +1144,8 @@ p, div, img {
   0% {
     opacity:1;
   } 60% {
-    filter:blur(0px);
-    backdrop-filter: blur(0px);
     opacity:1;
   } 100% {
-    filter:blur(10px);
-    backdrop-filter: blur(10px);
     opacity:0;
   } 
 }
